@@ -24,9 +24,9 @@ class PuzzleDay03 extends PuzzleBase {
   /**
    * @inheritDoc
    */
-  public function __construct(bool $load_input = TRUE) {
+  public function __construct(bool $load_input = TRUE, string $input_delimiter = "\n") {
     $this->day = 3;
-    parent::__construct($load_input);
+    parent::__construct($load_input, $input_delimiter);
   }
 
   /**

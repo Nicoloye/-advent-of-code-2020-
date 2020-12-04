@@ -12,9 +12,11 @@ interface PuzzleInterface {
    *
    * @param bool $load_input
    *
+   * @param string $input_delimiter
+   *
    * @return mixed|void
    */
-  public function preprocess(bool $load_input = TRUE);
+  public function preprocess(bool $load_input = TRUE, string $input_delimiter = "\n");
 
   /**
    * Process the puzzle input and calculate the intended results for part 1.

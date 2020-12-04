@@ -14,12 +14,14 @@ class AoCHelper {
    *
    * @param $index
    *
+   * @param $delimiter
+   *
    * @return false|string[]
    */
-  public function getInput($index) {
+  public function getInput($index, $delimiter) {
     $path = PROJECT_ROOT . '/data/input' . $index;
     $input = file_get_contents($path);
-    return explode("\n", $input);
+    return explode($delimiter, $input);
   }
 
   /**

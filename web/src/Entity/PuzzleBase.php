@@ -31,22 +31,23 @@ class PuzzleBase implements PuzzleInterface {
    * PuzzleBase constructor.
    *
    * @param bool $load_input
+   * @param string $input_delimiter
    */
-  public function __construct(bool $load_input = TRUE){
+  public function __construct(bool $load_input = TRUE, string $input_delimiter = "\n"){
     // Set properties.
     $this->helper = new AoCHelper();
 
     // Start processing the puzzle.
-    $this->preprocess($load_input);
+    $this->preprocess($load_input, $input_delimiter);
   }
 
   /**
    * @inheritDoc
    */
-  public function preprocess(bool $load_input = TRUE) {
+  public function preprocess(bool $load_input = TRUE, string $input_delimiter = "\n") {
     // Load the input dataset if required
     if ($load_input) {
-      $this->input = $this->helper->getInput($this->day);
+      $this->input = $this->helper->getInput($this->day, $input_delimiter);
     }
 
     if (!empty($this->day)) {
