@@ -1,0 +1,22 @@
+version: '2'
+services:
+  web:
+    # @see https://github.com/Actency/docker-apache-php
+    image: actency/docker-apache-php:7.4
+    ports:
+      - "80:80"
+      - "9000:9000"
+    environment:
+      - SERVERNAME=aoc.loc
+      - SERVERALIAS=aoc.loc
+      - DOCUMENTROOT=web
+    volumes:
+      - [web_path]:/var/www/html
+      - [ssh_path]:/var/www/.ssh/
+      - [composer_path]:/var/www/.composer
+    tty: true
+    shm_size: 2G
+    hostname: "aoc.loc"
+    extra_hosts:
+      - "aoc.loc:127.0.0.1"
+      - "docker_host:10.1.1.11" # YOUR IP HERE
