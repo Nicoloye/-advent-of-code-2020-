@@ -17,12 +17,13 @@ require_once('autoload.php');
 
 // Perform puzzles.
 new PuzzleBase(FALSE);
-for($i = 5; $i > 0; $i--) {
+for($i = 6; $i > 0; $i--) {
   $day = $i < 10 ? '0' . $i : $i;
   $class_name = 'Puzzle\PuzzleDay' . $day;
   switch ($i) {
-    // The input delimiter is specific on day 4.
+    // The input delimiter is specific on days 4 & 6.
     case 4 :
+    case 6 :
       new $class_name(TRUE, "\n\n");
       break;
     default :

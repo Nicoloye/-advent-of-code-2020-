@@ -39,7 +39,7 @@ class PuzzleDay05 extends PuzzleBase {
       // Check the ids ignoring the first row of seats.
       if ($seat_id > 7) {
         if ($seat_id != $last_id + 1) {
-          // Return the previous seat id as our detection is trigger once
+          // Return the previous seat id as our detection is triggered once
           // we passed the missing id.
           $this->render($seat_id - 1);
           break;
