@@ -27,6 +27,9 @@ class PuzzleDay06 extends PuzzleBase {
       $this->input[$key] = explode("\n", $value);
     }
 
+    // Print day title.
+    $this->render($this->helper->printDay($this->day));
+
     // Process the input.
     $this->processPart1();
   }

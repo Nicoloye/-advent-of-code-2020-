@@ -39,10 +39,8 @@ class PuzzleDay04 extends PuzzleBase {
     };
     $this->input = array_map($func, $this->input);
 
-    if (!empty($this->day)) {
-      // Print day title.
-      $this->render($this->helper->printDay($this->day));
-    }
+    // Print day title.
+    $this->render($this->helper->printDay($this->day));
 
     // Process the input.
     $this->processPart1();
